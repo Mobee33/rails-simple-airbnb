@@ -10,3 +10,43 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body  {
+  background-image: url("https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+  background-color: #cccccc;
+}
+
+img {
+  padding-left: 8px;
+  width: 800px;
+  height: auto;
+  border-radius: 10px
+}
+
+.flat-card-image {
+  height: 180px;
+  width: 400px;
+  background-position: center;
+  background-size: cover;
+  padding-left: 4px;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 2px #cacbc4
+}
+
+.flat-card-content {
+  padding: 24px;
+  width: 400px;
+  background-color: #F8F9FA;
+  padding-left: 4px;
+  border: 1px solid rgb(204, 200, 200);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 2px 2px 2px #cacbc4
+}
+
+a {
+  text-decoration: none;
+}
+
+.big-img-flat {
+  border-radius: 10px
+}

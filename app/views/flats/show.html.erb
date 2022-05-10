@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Simple Airbnb</a>
+  </div>
+</nav>
+
+<div class="container mt-3 d-flex justify-content-center">
+  <h2><%= @flat.name %></h2>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <h4>Located at: <%= @flat.address %></h4>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <h5>Price: € <%= @flat.price_per_night %> 👪: <%= @flat.number_of_guests %></h5>
+</div>
+
+<div class="container mt-3 d-flex justify-content-center">
+  <%= image_tag @flat.image, alt: @flat.name %>
+</div>
+
+
+<div class="container mt-3 d-flex justify-content-center">
+  <h5><em>A bit more about this accomodation</em></h5>
+</div>
+
+<div class="container d-flex justify-content-center" style="width:800px">
+  <p> <%= @flat.description %></p>
+</div>
+
+<div class="container d-flex justify-content-center mb-3 ">
+  <a class="btn btn-outline-primary my-2 my-sm-0 ms-2" <%= link_to('Edit page', edit_flat_path)%></a>
+  &nbsp;
+  <a class="btn btn-outline-danger my-2 my-sm-0 ms-2" <%= link_to("Delete #{@flat.name}", flat_path(@flat), method: :delete, data: {confirm: "Are you sure"}) %></a>
+</div>

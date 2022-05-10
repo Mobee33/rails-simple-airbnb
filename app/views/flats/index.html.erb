@@ -1,0 +1,45 @@
+ <%# Navbar %>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Simple Airbnb</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="ms-auto flex">
+            </form>
+            <a class="btn btn-outline-success my-2 my-sm-0 ms-2" <%= link_to("Create a flat", new_flat_path)%></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<%# Heading H1 %>
+<div class="container mt-3 d-flex justify-content-center">
+  <h1><strong>All our flats</strong></h1>
+</div>
+<%# Paragraph P %>
+<div class="container mt-3 d-flex justify-content-center">
+  <% if Flat.count <2 %>
+    <p> One flat</p>
+  <% else %>
+    <p>All <%= Flat.count %> flats</p>
+  <% end %>
+</div>
+
+<%# Cards %>
+<div class="row">
+  <div class="container mt-3 d-flex justify-content-center">
+    <div class="flat-card">
+        <% @flats.each do |flat| %>
+          <div class="flat-card-image" style="background-image: url(<%=flat.image%>);"></div>
+          <div class="flat-card-content">
+            <div class="flat-card-title d-flex justify-content-center">
+              <h4><%= flat.name%></h4>
+            </div>
+            <div class="flat-card-title d-flex justify-content-center">
+              <p class="btn btn-outline-info"><%= link_to("#{flat.name} - 👪 #{flat.number_of_guests}- € #{flat.price_per_night}", flat_path(flat))  %></p>
+            </div>
+          </div>
+              <br>
+        <% end %>
+      </div>
+  </div>
+</div>
